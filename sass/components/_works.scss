@@ -1,0 +1,112 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.works {
+  background-color: $color-white;
+  @include section-padding;
+
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  @include mq-tablet {
+    padding-block: 64px;
+  }
+
+  @include mq-mobile {
+    padding-block: 48px;
+
+    &__filters {
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.gallery {
+  &__slider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__viewport {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  &__track {
+    display: flex;
+    gap: 16px;
+    will-change: transform;
+  }
+
+  &__column {
+    flex: 0 0 var(--gallery-column-width, 33.333%);
+    display: grid;
+    gap: 16px;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: $radius-sm;
+    background-color: $color-border;
+  }
+
+  &__arrow {
+    @include flex-center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border: 1px solid rgba($color-border-dark, 0.35);
+    border-radius: $radius-sm;
+    background-color: $color-white;
+    color: $color-text;
+    cursor: pointer;
+    transition: background-color $transition, color $transition, border-color $transition, opacity $transition;
+
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    &:hover {
+      border-color: $color-accent;
+      color: $color-accent;
+    }
+
+    &:disabled,
+    .gallery__slider--animating & {
+      pointer-events: none;
+      opacity: 0.45;
+    }
+  }
+
+  @include mq-mobile {
+    &__slider {
+      gap: 8px;
+    }
+
+    &__arrow {
+      width: 40px;
+      height: 40px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &__track,
+    &__column {
+      gap: 12px;
+    }
+  }
+}

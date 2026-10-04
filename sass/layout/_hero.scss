@@ -1,0 +1,112 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.hero {
+  position: relative;
+  background-color: $color-hero;
+  overflow: hidden;
+  min-height: 520px;
+
+  &__inner {
+    @include container;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    min-height: 520px;
+    padding-block: 80px;
+  }
+
+  &__content {
+    max-width: 560px;
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    font-size: $font-size-hero;
+    font-weight: 700;
+    line-height: 1.15;
+    color: $color-white;
+  }
+
+  &__text {
+    margin: 0 0 32px;
+    max-width: 460px;
+    font-size: $font-size-base;
+    line-height: 1.6;
+    color: rgba($color-white, 0.72);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__graphic {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-42%);
+    width: 420px;
+    height: 420px;
+    pointer-events: none;
+  }
+
+  @include mq-tablet {
+    min-height: 440px;
+
+    &__inner {
+      min-height: 440px;
+      padding-block: 64px;
+      padding-inline: 24px;
+    }
+
+    &__title {
+      font-size: 40px;
+    }
+
+    &__graphic {
+      display: none;
+    }
+
+    &__content {
+      max-width: 100%;
+    }
+
+    &__text {
+      max-width: 100%;
+    }
+  }
+
+  @include mq-mobile {
+    min-height: 0;
+
+    &__inner {
+      min-height: 0;
+      padding-block: 48px;
+      padding-inline: 16px;
+    }
+
+    &__title {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    &__text {
+      margin-bottom: 24px;
+      font-size: $font-size-sm;
+    }
+
+    &__actions {
+      gap: 8px;
+
+      .btn {
+        flex: 1;
+        padding: 12px 10px;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+    }
+  }
+}

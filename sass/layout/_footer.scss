@@ -1,0 +1,98 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.footer {
+  background-color: $color-footer;
+  color: rgba($color-white, 0.7);
+  padding-top: 56px;
+
+  &__inner {
+    @include container;
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding-bottom: 40px;
+  }
+
+  &__label {
+    margin: 0 0 12px;
+    font-size: $font-size-xs;
+    font-weight: 500;
+    color: rgba($color-white, 0.45);
+  }
+
+  &__value {
+    margin: 0;
+    font-size: $font-size-sm;
+    line-height: 1.6;
+    color: rgba($color-white, 0.9);
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    a {
+      font-size: $font-size-sm;
+      color: rgba($color-white, 0.9);
+      transition: color $transition;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-block: 20px;
+    border-top: 1px solid rgba($color-white, 0.12);
+    font-size: $font-size-xs;
+    color: rgba($color-white, 0.45);
+  }
+
+  @include mq-tablet {
+    padding-top: 48px;
+
+    &__inner {
+      padding-inline: 24px;
+    }
+
+    &__top {
+      gap: 24px;
+      padding-bottom: 32px;
+    }
+  }
+
+  @include mq-mobile {
+    padding-top: 40px;
+
+    &__inner {
+      padding-inline: 16px;
+    }
+
+    &__top {
+      grid-template-columns: 1fr;
+      gap: 28px;
+      padding-bottom: 28px;
+    }
+
+    &__bottom {
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    &__label {
+      font-size: $font-size-sm;
+      font-weight: 600;
+      color: rgba($color-white, 0.9);
+    }
+  }
+}

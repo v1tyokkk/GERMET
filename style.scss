@@ -1,0 +1,21 @@
+@use "sass/abstracts/variables";
+@use "sass/abstracts/functions";
+@use "sass/abstracts/mixins";
+@use "sass/abstracts/placeholders";
+
+@use "sass/base/reset";
+@use "sass/base/typography";
+@use "sass/base/base";
+
+@use "sass/components/buttons";
+@use "sass/components/services";
+@use "sass/components/works";
+@use "sass/components/process";
+@use "sass/components/reviews";
+@use "sass/components/prices";
+@use "sass/components/form";
+@use "sass/components/calculator";
+
+@use "sass/layout/header";
+@use "sass/layout/hero";
+@use "sass/layout/footer";

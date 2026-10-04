@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.btn {
+  @include button-base;
+
+  &--primary {
+    background-color: $color-accent;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-accent-hover;
+    }
+  }
+
+  &--outline {
+    background-color: transparent;
+    border-color: $color-border-dark;
+    color: $color-text;
+
+    &:hover {
+      background-color: $color-text;
+      color: $color-white;
+    }
+  }
+
+  &--outline-light {
+    background-color: transparent;
+    border-color: $color-white;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-hero;
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    border-color: rgba($color-border-dark, 0.35);
+    color: $color-text;
+    padding: 10px 18px;
+
+    &:hover {
+      border-color: $color-border-dark;
+    }
+  }
+
+  &--filter {
+    background-color: transparent;
+    border-color: rgba($color-border-dark, 0.45);
+    color: $color-text;
+    padding: 10px 18px;
+    font-weight: 500;
+
+    &.is-active {
+      background-color: $color-dark;
+      border-color: $color-dark;
+      color: $color-white;
+    }
+  }
+}

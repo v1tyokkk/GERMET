@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ГЕРМЕТ — сантехнические работы</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <input class="header__toggle" type="checkbox" id="nav-toggle">
+
+    <div class="header__inner">
+      <div class="header__top">
+        <a class="header__logo" href="index.html">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 18c0-3.5 2-6 6-8 4 2 6 4.5 6 8v2H8v-2z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M14 6v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="14" cy="4.5" r="1.5" fill="currentColor"/>
+            <path d="M10 22h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          ГЕРМЕТ
+        </a>
+
+        <label class="header__burger" for="nav-toggle">
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="visually-hidden">Открыть или закрыть меню</span>
+        </label>
+      </div>
+
+      <nav class="header__nav" id="main-nav">
+        <a href="#services">Услуги</a>
+        <a href="#works">Работы</a>
+        <a href="#prices">Цены</a>
+        <a href="calc.html">Калькулятор</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--ghost" href="tel:+375295331809">+375 29 777-77-77</a>
+        <a class="btn btn--primary" href="#request">Оставить заявку</a>
+      </div>
+    </div>
+
+    <div class="side-menu">
+      <nav class="side-menu__nav">
+        <label class="side-menu__link" for="nav-toggle">
+          <a href="#services">Услуги</a>
+        </label>
+        <label class="side-menu__link" for="nav-toggle">
+          <a href="#works">Работы</a>
+        </label>
+        <label class="side-menu__link" for="nav-toggle">
+          <a href="#prices">Цены</a>
+        </label>
+        <label class="side-menu__link" for="nav-toggle">
+          <a href="calc.html">Калькулятор</a>
+        </label>
+        <label class="side-menu__link" for="nav-toggle">
+          <a href="#contacts">Контакты</a>
+        </label>
+      </nav>
+    </div>
+
+    <label class="side-menu__backdrop" for="nav-toggle"></label>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__inner">
+        <div class="hero__content">
+          <h1 class="hero__title">Течёт — значит, ещё не звонили нам</h1>
+          <p class="hero__text">Ремонт, монтаж и обслуживание сантехники любой сложности. Приезжаем в день обращения, даём гарантию на все работы.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#request">Оставить заявку</a>
+            <a class="btn btn--outline-light" href="#prices">Смотреть цены</a>
+          </div>
+        </div>
+      </div>
+
+      <svg class="hero__graphic" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M80 40 H280 V180 H400 V340" stroke="#78a0aa" stroke-opacity="0.35" stroke-width="28" stroke-linecap="square"/>
+        <path d="M40 100 H200 V260 H360 V400" stroke="#78a0aa" stroke-opacity="0.22" stroke-width="28" stroke-linecap="square"/>
+        <circle cx="280" cy="40" r="14" fill="#c57a45"/>
+        <circle cx="280" cy="180" r="14" fill="#c57a45"/>
+        <circle cx="400" cy="180" r="14" fill="#c57a45"/>
+        <circle cx="200" cy="260" r="14" fill="#c57a45"/>
+      </svg>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-head__line"></span>
+          <h2 class="section-head__title">Что мы делаем</h2>
+          <p class="section-head__text">Полный цикл сантехнических работ — от диагностики протечки до чистовой установки оборудования.</p>
+        </div>
+
+        <div class="services__grid">
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6c-4 6-8 10-8 15a8 8 0 0 0 16 0c0-5-4-9-8-15z" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3 class="service-card__title">Устранение течи</h3>
+            <p class="service-card__text">Найдём источник протечки и устраним его за один визит.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 14h20v12H8V14z" stroke="currentColor" stroke-width="2"/><path d="M12 14V10h12v4" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3 class="service-card__title">Установка сантехники</h3>
+            <p class="service-card__text">Ванны, раковины, унитазы, смесители — от подбора до подключения.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="14" width="24" height="8" rx="4" stroke="currentColor" stroke-width="2"/><path d="M18 14v8" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3 class="service-card__title">Прочистка канализации</h3>
+            <p class="service-card__text">Механическая и гидродинамическая прочистка без агрессивной химии.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="11" y="6" width="14" height="24" rx="2" stroke="currentColor" stroke-width="2"/><rect x="14" y="10" width="8" height="6" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="service-card__title">Водонагреватели</h3>
+            <p class="service-card__text">Установка проточных и накопительных моделей любого объёма.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="18" cy="18" r="10" stroke="currentColor" stroke-width="2"/><path d="M18 12v7l5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="service-card__title">Аварийный выезд</h3>
+            <p class="service-card__text">Работаем круглосуточно, без выходных и праздников.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon">
+              <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 6l10 4v8c0 7-5 12-10 14-5-2-10-7-10-14V10l10-4z" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <h3 class="service-card__title">Гарантия на работы</h3>
+            <p class="service-card__text">До 3 лет на монтаж и установленное оборудование.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="works gallery" id="works">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-head__line"></span>
+          <h2 class="section-head__title">Наши работы</h2>
+          <p class="section-head__text">Примеры завершённых объектов — от точечного ремонта до полной замены разводки.</p>
+        </div>
+
+        <div class="works__filters">
+          <button class="btn btn--filter gallery-filter gallery-filter--active is-active" type="button" data-category="all" aria-pressed="true">Все</button>
+          <button class="btn btn--filter gallery-filter" type="button" data-category="bathroom" aria-pressed="false">Ванная</button>
+          <button class="btn btn--filter gallery-filter" type="button" data-category="kitchen" aria-pressed="false">Кухня</button>
+          <button class="btn btn--filter gallery-filter" type="button" data-category="heating" aria-pressed="false">Отопление</button>
+        </div>
+
+        <div class="gallery__slider">
+          <button class="gallery__arrow gallery__arrow--left" type="button" aria-label="Листать вправо">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <div class="gallery__viewport">
+            <div class="gallery__track"></div>
+          </div>
+
+          <button class="gallery__arrow gallery__arrow--right" type="button" aria-label="Листать влево">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-head__line"></span>
+          <h2 class="section-head__title">Как мы работаем</h2>
+          <p class="section-head__text">Реалистичный видео-кейс: путь от аварийного выезда мастера до сдачи готового объекта клиенту.</p>
+        </div>
+
+        <div class="process__player">
+          <input class="process__toggle" type="checkbox" id="process-video">
+
+          <video
+            class="process__media"
+            autoplay
+            muted
+            playsinline
+            loop
+            controls
+            poster="assets/png/video.png"
+          >
+            <source src="assets/png/video.mp4" type="video/mp4">
+          </video>
+
+          <label class="process__curtain" for="process-video">
+            <img class="process__poster" src="assets/png/video.png" alt="Мастер выполняет сантехнические работы">
+            <span class="process__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7L8 5z"/></svg>
+            </span>
+            <span class="process__overlay">
+              <span class="process__overlay-title">Выезд → диагностика → сдача объекта</span>
+              <span class="process__overlay-text">Короткий обзор типового вызова: осмотр, согласование сметы, аккуратный ремонт и финальная проверка.</span>
+            </span>
+            <span class="process__time">00:15</span>
+          </label>
+        </div>
+        <p class="process__caption">Видео-кейс показывает полный процесс работы мастера без постановочных деталей.</p>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="container">
+        <div class="reviews__top">
+          <div class="reviews__head section-head">
+            <span class="section-head__line"></span>
+            <h2 class="section-head__title">Нам доверяют</h2>
+            <p class="section-head__text">Клиенты отмечают пунктуальность, чистую работу и понятную стоимость до начала ремонта.</p>
+          </div>
+
+          <div class="reviews__rating">
+            <span class="reviews__score">4.9</span>
+            <div class="reviews__meta">
+              <div class="reviews__stars" role="img" aria-label="5 из 5 звёзд">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5l1.9 3.9 4.3.6-3.1 3 0.7 4.3L8 11.3l-3.8 2 0.7-4.3-3.1-3 4.3-.6L8 1.5z"/></svg>
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5l1.9 3.9 4.3.6-3.1 3 0.7 4.3L8 11.3l-3.8 2 0.7-4.3-3.1-3 4.3-.6L8 1.5z"/></svg>
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5l1.9 3.9 4.3.6-3.1 3 0.7 4.3L8 11.3l-3.8 2 0.7-4.3-3.1-3 4.3-.6L8 1.5z"/></svg>
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5l1.9 3.9 4.3.6-3.1 3 0.7 4.3L8 11.3l-3.8 2 0.7-4.3-3.1-3 4.3-.6L8 1.5z"/></svg>
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 1.5l1.9 3.9 4.3.6-3.1 3 0.7 4.3L8 11.3l-3.8 2 0.7-4.3-3.1-3 4.3-.6L8 1.5z"/></svg>
+              </div>
+              <p class="reviews__rating-text">средняя оценка по 186 вызовам за последний год</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reviews__grid">
+          <article class="review-card">
+            <div class="review-card__top">
+              <div>
+                <h3 class="review-card__name">Анна К.</h3>
+                <p class="review-card__service">Замена смесителя</p>
+              </div>
+              <span class="review-card__avatar">АК</span>
+            </div>
+            <p class="review-card__text">«Мастер приехал в тот же день, сразу назвал стоимость и аккуратно всё установил. После себя оставил чистую ванную.»</p>
+            <span class="review-card__tag">Проверенный вызов</span>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__top">
+              <div>
+                <h3 class="review-card__name">Игорь М.</h3>
+                <p class="review-card__service">Устранение протечки</p>
+              </div>
+              <span class="review-card__avatar">ИМ</span>
+            </div>
+            <p class="review-card__text">«Протечку под раковиной нашли быстро. Понравилось, что объяснили причину и дали гарантию на выполненную работу.»</p>
+            <span class="review-card__tag">Гарантия 1 год</span>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__top">
+              <div>
+                <h3 class="review-card__name">Марина С.</h3>
+                <p class="review-card__service">Монтаж ванны</p>
+              </div>
+              <span class="review-card__avatar">МС</span>
+            </div>
+            <p class="review-card__text">«Сделали монтаж под ключ без лишнего шума. Сроки выдержали, швы ровные, коммуникации спрятаны аккуратно.»</p>
+            <span class="review-card__tag">Сдано в срок</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="prices" id="prices">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-head__line"></span>
+          <h2 class="section-head__title">Цены</h2>
+          <p class="section-head__text">Финальная стоимость зависит от объёма работ и материалов — фиксируем её на месте до начала работ.</p>
+        </div>
+
+        <div class="prices__grid">
+          <article class="price-card">
+            <h3 class="price-card__title">Диагностика</h3>
+            <p class="price-card__price">30 BYN <span>/ выезд</span></p>
+            <ul class="price-card__list">
+              <li class="price-card__item">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Выезд мастера в течение 2 часов
+              </li>
+              <li class="price-card__item">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Осмотр и поиск причины
+              </li>
+              <li class="price-card__item">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Смета на ремонт
+              </li>
+            </ul>
+            <a class="btn btn--outline" href="#request">Выбрать</a>
+          </article>
+
+          <article class="price-card price-card--popular">
+            <span class="price-card__badge">популярно</span>
+            <h3 class="price-card__title">Стандартный ремонт</h3>
+            <p class="price-card__price">от 80 BYN</p>
+            <ul class="price-card__list">
+              <li class="price-card__item">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Всё из тарифа «Диагностика»
+              </li>
+              <li class="price-card__item">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Устранение течи или замена узла
+              </li>
+              <li class="price-card__item">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Гарантия 1 год
+              </li>
+            </ul>
+            <a class="btn btn--primary" href="#request">Выбрать</a>
+          </article>
+
+          <article class="price-card">
+            <h3 class="price-card__title">Комплексное обслуживание</h3>
+            <p class="price-card__price">от 150 BYN <span>/ мес</span></p>
+            <ul class="price-card__list">
+              <li class="price-card__item">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Плановые осмотры раз в месяц
+              </li>
+              <li class="price-card__item">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Приоритетный аварийный выезд
+              </li>
+              <li class="price-card__item">
+                <svg viewBox="0 0 16 16" fill="none"><path d="M3 8l3.5 3.5L13 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Гарантия 3 года
+              </li>
+            </ul>
+            <a class="btn btn--outline" href="#request">Выбрать</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="request" id="request">
+      <div class="container">
+        <div class="request__inner">
+          <div class="request__info-block">
+            <span class="request__line"></span>
+            <h2 class="request__title">Оставить заявку</h2>
+            <p class="request__text">Опишите проблему — перезвоним в течение 15 минут и назовём примерную стоимость.</p>
+            <div class="request__info">
+              <p>Телефон: +375 29 777-77-77</p>
+              <p>Работаем: круглосуточно, без выходных</p>
+            </div>
+          </div>
+
+          <form class="form" action="#" method="post">
+            <div class="form__field">
+              <label class="form__label" for="name">Имя</label>
+              <input class="form__input" type="text" id="name" name="name" placeholder="Как к вам обращаться">
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="phone">Телефон</label>
+              <input class="form__input" type="tel" id="phone" name="phone" placeholder="+375 __ ___ - __ - __">
+            </div>
+            <div class="form__field">
+              <label class="form__label" for="message">Сообщение</label>
+              <textarea class="form__textarea" id="message" name="message" placeholder="Кратко опишите проблему"></textarea>
+            </div>
+            <button class="btn btn--primary" type="submit">Отправить заявку</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacts">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div>
+          <p class="footer__label">Разработчик</p>
+          <p class="footer__value">Viktar Tsybulskas</p>
+        </div>
+        <div>
+          <p class="footer__label">Контакты</p>
+          <p class="footer__value">г. Брест, ул. Янки Купалы, 5<br>+375 29 777-77-77</p>
+        </div>
+        <div>
+          <p class="footer__label">Ссылки</p>
+          <div class="footer__links">
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub →</a>
+            <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">Figma →</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 ГЕРМЕТ</span>
+        <span>Сантехнические работы</span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>

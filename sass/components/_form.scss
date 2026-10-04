@@ -1,0 +1,125 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.request {
+  background-color: $color-form-bg;
+  @include section-padding;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  &__line {
+    @include accent-line;
+  }
+
+  &__title {
+    margin: 0 0 14px;
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    color: $color-white;
+  }
+
+  &__text {
+    margin: 0 0 28px;
+    max-width: 380px;
+    font-size: $font-size-base;
+    line-height: 1.55;
+    color: $color-form-muted;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: $font-size-sm;
+    color: rgba($color-white, 0.9);
+  }
+
+  @include mq-tablet {
+    padding-block: 64px;
+
+    &__inner {
+      grid-template-columns: 1fr;
+      gap: 36px;
+    }
+
+    &__text {
+      max-width: none;
+    }
+
+    &__title {
+      font-size: 32px;
+    }
+  }
+
+  @include mq-mobile {
+    padding-block: 48px;
+
+    &__title {
+      font-size: 26px;
+    }
+
+    &__text {
+      margin-bottom: 20px;
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__label {
+    font-size: $font-size-sm;
+    color: $color-form-muted;
+  }
+
+  &__input,
+  &__textarea {
+    width: 100%;
+    padding: 12px 14px;
+    background-color: transparent;
+    border: 1px solid $color-input-border;
+    border-radius: $radius-sm;
+    color: $color-white;
+    outline: none;
+    transition: border-color $transition;
+
+    &::placeholder {
+      color: rgba($color-white, 0.4);
+    }
+
+    &:focus {
+      border-color: $color-accent;
+    }
+  }
+
+  &__textarea {
+    min-height: 110px;
+    resize: vertical;
+  }
+
+  .btn {
+    align-self: flex-start;
+    margin-top: 4px;
+  }
+
+  @include mq-tablet {
+    .btn {
+      width: 100%;
+      align-self: stretch;
+    }
+  }
+}

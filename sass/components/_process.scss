@@ -1,0 +1,180 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/placeholders" as *;
+
+.process {
+  background-color: $color-cream-soft;
+  @include section-padding;
+
+  &__player {
+    position: relative;
+    overflow: hidden;
+    border-radius: $radius-md;
+    aspect-ratio: 16 / 9;
+    background-color: $color-dark;
+  }
+
+  &__toggle {
+    @extend %visually-hidden;
+
+    &:checked ~ .process__curtain {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  &__media {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__curtain {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: block;
+    margin: 0;
+    cursor: pointer;
+    transition: opacity $transition, visibility $transition;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.55) 0%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0.15) 100%
+      );
+    }
+  }
+
+  &__poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+    @include flex-center;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background-color: $color-accent;
+    color: $color-white;
+    transition: background-color $transition, transform $transition;
+
+    .process__curtain:hover & {
+      background-color: $color-accent-hover;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    svg {
+      width: 22px;
+      height: 22px;
+      margin-left: 3px;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    left: 28px;
+    bottom: 28px;
+    z-index: 3;
+    display: block;
+    max-width: 420px;
+    color: $color-white;
+  }
+
+  &__overlay-title {
+    display: block;
+    margin: 0 0 8px;
+    font-size: $font-size-md;
+    font-weight: 700;
+  }
+
+  &__overlay-text {
+    display: block;
+    margin: 0;
+    font-size: $font-size-sm;
+    line-height: 1.5;
+    color: rgba($color-white, 0.85);
+  }
+
+  &__time {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 3;
+    padding: 6px 10px;
+    border-radius: $radius-sm;
+    background-color: rgba(0, 0, 0, 0.55);
+    font-size: $font-size-xs;
+    font-weight: 600;
+    color: $color-white;
+  }
+
+  &__caption {
+    margin-top: 16px;
+    font-size: $font-size-sm;
+    color: $color-text-muted;
+  }
+
+  @include mq-tablet {
+    padding-block: 64px;
+  }
+
+  @include mq-mobile {
+    padding-block: 48px;
+
+    &__play {
+      width: 56px;
+      height: 56px;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &__overlay {
+      left: 14px;
+      right: 70px;
+      bottom: 14px;
+      max-width: none;
+    }
+
+    &__overlay-title {
+      font-size: $font-size-sm;
+      margin-bottom: 4px;
+    }
+
+    &__overlay-text {
+      font-size: 11px;
+      line-height: 1.35;
+    }
+
+    &__time {
+      right: 12px;
+      bottom: 12px;
+      padding: 4px 8px;
+    }
+
+    &__caption {
+      font-size: $font-size-xs;
+    }
+  }
+}

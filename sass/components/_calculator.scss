@@ -1,0 +1,337 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/placeholders" as *;
+
+.page-calc {
+  background-color: $color-cream-soft;
+}
+
+.header--calc {
+  background-color: $color-cream-soft;
+
+  .header__burger {
+    background-color: $color-cream-soft;
+  }
+
+  .header__nav a[aria-current="page"] {
+    color: $color-accent;
+    font-weight: 700;
+  }
+}
+
+.calc-hero {
+  background-color: $color-hero;
+  color: $color-white;
+  padding-block: 64px;
+
+  &__line {
+    @include accent-line;
+  }
+
+  &__title {
+    margin: 0 0 14px;
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  &__text {
+    margin: 0;
+    max-width: 640px;
+    font-size: $font-size-base;
+    line-height: 1.55;
+    color: rgba($color-white, 0.78);
+  }
+
+  @include mq-tablet {
+    padding-block: 48px;
+
+    &__title {
+      font-size: 32px;
+    }
+  }
+
+  @include mq-mobile {
+    padding-block: 40px;
+
+    &__title {
+      font-size: 26px;
+    }
+
+    &__text {
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+.calculator {
+  @include section-padding;
+
+  &__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 32px;
+    align-items: start;
+  }
+
+  &__form {
+    @extend %card;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 32px;
+  }
+
+  &__fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__legend {
+    margin: 0 0 4px;
+    padding: 0;
+    font-size: $font-size-md;
+    font-weight: 700;
+    color: $color-text;
+  }
+
+  &__label {
+    font-size: $font-size-sm;
+    font-weight: 500;
+    color: $color-text-muted;
+  }
+
+  &__select,
+  &__number {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    background-color: $color-white;
+    color: $color-text;
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    outline: none;
+    transition: border-color $transition;
+
+    &:focus {
+      border-color: $color-accent;
+    }
+  }
+
+  &__stepper {
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+    max-width: 220px;
+  }
+
+  &__number {
+    text-align: center;
+    -moz-appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &__step {
+    @include flex-center;
+    flex: 0 0 44px;
+    border: 1px solid $color-border;
+    border-radius: $radius-sm;
+    background-color: $color-cream-soft;
+    color: $color-text;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color $transition, border-color $transition, color $transition;
+
+    &:hover {
+      border-color: $color-accent;
+      color: $color-accent;
+    }
+  }
+
+  &__hint {
+    margin: 0;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+
+  &__radios,
+  &__checks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__radio,
+  &__check {
+    @extend %card;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    cursor: pointer;
+    transition: border-color $transition, background-color $transition;
+
+    input {
+      width: 18px;
+      height: 18px;
+      accent-color: $color-accent;
+      flex-shrink: 0;
+    }
+
+    span {
+      font-size: $font-size-sm;
+      line-height: 1.4;
+      color: $color-text;
+    }
+
+    &:has(input:checked) {
+      border-color: $color-accent;
+      background-color: rgba($color-accent, 0.06);
+    }
+  }
+
+  &__result {
+    @extend %card;
+    position: sticky;
+    top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 28px;
+    background-color: $color-hero;
+    border-color: transparent;
+    color: $color-white;
+  }
+
+  &__result-label {
+    margin: 0;
+    font-size: $font-size-sm;
+    color: rgba($color-white, 0.7);
+  }
+
+  &__result-price {
+    margin: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  &__result-currency {
+    font-size: $font-size-md;
+    font-weight: 600;
+    color: rgba($color-white, 0.75);
+  }
+
+  &__breakdown {
+    margin: 0;
+    padding: 16px 0 0;
+    border-top: 1px solid rgba($color-white, 0.18);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: $font-size-sm;
+      color: rgba($color-white, 0.78);
+
+      strong {
+        color: $color-white;
+        font-weight: 600;
+        text-align: right;
+      }
+    }
+  }
+
+  &__note {
+    margin: 0;
+    font-size: $font-size-xs;
+    line-height: 1.5;
+    color: rgba($color-white, 0.55);
+  }
+
+  &__cta {
+    margin-top: 8px;
+    width: 100%;
+    border-color: rgba($color-white, 0.45);
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-hero;
+      border-color: $color-white;
+    }
+  }
+
+  @include mq-tablet {
+    padding-block: 56px;
+
+    &__layout {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    &__form {
+      padding: 28px 24px;
+    }
+
+    &__result {
+      position: static;
+      padding: 28px 24px;
+    }
+
+    &__result-price {
+      font-size: 40px;
+    }
+  }
+
+  @include mq-mobile {
+    padding-block: 40px;
+
+    &__form {
+      padding: 22px 16px;
+      gap: 22px;
+    }
+
+    &__legend {
+      font-size: $font-size-base;
+    }
+
+    &__stepper {
+      max-width: none;
+    }
+
+    &__result {
+      padding: 22px 16px;
+    }
+
+    &__result-price {
+      font-size: 36px;
+    }
+
+    &__breakdown li {
+      flex-direction: column;
+      gap: 4px;
+
+      strong {
+        text-align: left;
+      }
+    }
+  }
+}

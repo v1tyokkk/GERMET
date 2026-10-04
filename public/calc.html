@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор — ГЕРМЕТ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-calc">
+  <header class="header header--calc">
+    <input class="header__toggle" type="checkbox" id="nav-toggle">
+
+    <div class="header__inner">
+      <div class="header__top">
+        <a class="header__logo" href="index.html">
+          <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8 18c0-3.5 2-6 6-8 4 2 6 4.5 6 8v2H8v-2z" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M14 6v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <circle cx="14" cy="4.5" r="1.5" fill="currentColor"/>
+            <path d="M10 22h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+          ГЕРМЕТ
+        </a>
+
+        <label class="header__burger" for="nav-toggle">
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="visually-hidden">Открыть или закрыть меню</span>
+        </label>
+      </div>
+
+      <nav class="header__nav" id="main-nav">
+        <a href="index.html#services">Услуги</a>
+        <a href="index.html#works">Работы</a>
+        <a href="index.html#prices">Цены</a>
+        <a href="calc.html" aria-current="page">Калькулятор</a>
+        <a href="index.html#contacts">Контакты</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="btn btn--ghost" href="tel:+375295331809">+375 29 777-77-77</a>
+        <a class="btn btn--primary" href="index.html#request">Оставить заявку</a>
+      </div>
+    </div>
+
+    <div class="side-menu">
+      <nav class="side-menu__nav">
+        <label class="side-menu__link" for="nav-toggle">
+          <a href="index.html#services">Услуги</a>
+        </label>
+        <label class="side-menu__link" for="nav-toggle">
+          <a href="index.html#works">Работы</a>
+        </label>
+        <label class="side-menu__link" for="nav-toggle">
+          <a href="index.html#prices">Цены</a>
+        </label>
+        <label class="side-menu__link" for="nav-toggle">
+          <a href="calc.html">Калькулятор</a>
+        </label>
+        <label class="side-menu__link" for="nav-toggle">
+          <a href="index.html#contacts">Контакты</a>
+        </label>
+      </nav>
+    </div>
+
+    <label class="side-menu__backdrop" for="nav-toggle"></label>
+  </header>
+
+  <main>
+    <section class="calc-hero">
+      <div class="container">
+        <span class="calc-hero__line"></span>
+        <h1 class="calc-hero__title">Калькулятор стоимости</h1>
+        <p class="calc-hero__text">Выберите услугу и параметры — ориентировочная цена пересчитается сразу. Итог не заменяет смету мастера на объекте.</p>
+      </div>
+    </section>
+
+    <section class="calculator" id="calculator" aria-labelledby="calc-heading">
+      <div class="container">
+        <div class="calculator__layout">
+          <form class="calculator__form" id="calc-form" novalidate>
+            <h2 class="visually-hidden" id="calc-heading">Параметры расчёта</h2>
+
+            <fieldset class="calculator__fieldset">
+              <legend class="calculator__legend">Услуга</legend>
+              <label class="calculator__label" for="service">Тип работ</label>
+              <select class="calculator__select" id="service" name="service">
+                <option value="diagnostics">Диагностика</option>
+                <option value="leak">Устранение течи</option>
+                <option value="install" selected>Установка сантехники</option>
+                <option value="cleaning">Прочистка канализации</option>
+                <option value="heater">Водонагреватель</option>
+                <option value="heating">Отопление / радиаторы</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="calculator__fieldset">
+              <legend class="calculator__legend">Объём</legend>
+              <label class="calculator__label" for="units">Количество точек / узлов</label>
+              <div class="calculator__stepper">
+                <button class="calculator__step" type="button" data-step="-1" aria-label="Уменьшить">−</button>
+                <input class="calculator__number" type="number" id="units" name="units" min="1" max="20" value="1" inputmode="numeric">
+                <button class="calculator__step" type="button" data-step="1" aria-label="Увеличить">+</button>
+              </div>
+              <p class="calculator__hint">Например: смесители, сифоны, радиаторы</p>
+            </fieldset>
+
+            <fieldset class="calculator__fieldset">
+              <legend class="calculator__legend">Срочность</legend>
+              <div class="calculator__radios" role="radiogroup" aria-label="Срочность выезда">
+                <label class="calculator__radio">
+                  <input type="radio" name="urgency" value="normal" checked>
+                  <span>Обычный выезд</span>
+                </label>
+                <label class="calculator__radio">
+                  <input type="radio" name="urgency" value="priority">
+                  <span>В день обращения (+30%)</span>
+                </label>
+                <label class="calculator__radio">
+                  <input type="radio" name="urgency" value="emergency">
+                  <span>Аварийный вызов (+60%)</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="calculator__fieldset">
+              <legend class="calculator__legend">Дополнительно</legend>
+              <div class="calculator__checks">
+                <label class="calculator__check">
+                  <input type="checkbox" name="extras" value="materials">
+                  <span>Материалы под ключ (+45 BYN)</span>
+                </label>
+                <label class="calculator__check">
+                  <input type="checkbox" name="extras" value="area">
+                  <span>Выезд за город (+25 BYN)</span>
+                </label>
+                <label class="calculator__check">
+                  <input type="checkbox" name="extras" value="warranty">
+                  <span>Расширенная гарантия 3 года (+35 BYN)</span>
+                </label>
+              </div>
+            </fieldset>
+
+          </form>
+
+          <aside class="calculator__result" aria-live="polite">
+            <p class="calculator__result-label">Ориентировочная стоимость</p>
+            <p class="calculator__result-price">
+              <span id="calc-total">80</span>
+              <span class="calculator__result-currency">BYN</span>
+            </p>
+            <ul class="calculator__breakdown" id="calc-breakdown">
+              <li>Базовая услуга: <strong>80 BYN</strong></li>
+              <li>Количество точек: <strong>×1</strong></li>
+              <li>Срочность: <strong>без наценки</strong></li>
+            </ul>
+            <p class="calculator__note">Финальная цена фиксируется после осмотра. Гарантия на работы — до 3 лет.</p>
+            <a class="btn btn--outline calculator__cta" href="index.html#request">Оставить заявку</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacts">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div>
+          <p class="footer__label">Разработчик</p>
+          <p class="footer__value">Viktar Tsybulskas</p>
+        </div>
+        <div>
+          <p class="footer__label">Контакты</p>
+          <p class="footer__value">г. Брест, ул. Янки Купалы, 5<br>+375 29 777-77-77</p>
+        </div>
+        <div>
+          <p class="footer__label">Ссылки</p>
+          <div class="footer__links">
+            <a href="index.html">На главную →</a>
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub →</a>
+            <a href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">Figma →</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2026 ГЕРМЕТ</span>
+        <span>Сантехнические работы</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="calc.js" defer></script>
+</body>
+</html>

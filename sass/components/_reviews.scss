@@ -1,0 +1,178 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/placeholders" as *;
+
+.reviews {
+  background-color: $color-cream-soft;
+  padding-bottom: 80px;
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 36px;
+  }
+
+  &__head {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-width: 280px;
+    padding: 24px 28px;
+    background-color: $color-rating;
+    border-radius: $radius-md;
+    color: $color-white;
+    flex-shrink: 0;
+  }
+
+  &__score {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__stars {
+    display: flex;
+    gap: 4px;
+    color: $color-star;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__rating-text {
+    font-size: $font-size-xs;
+    line-height: 1.4;
+    color: rgba($color-white, 0.85);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  @include mq-tablet {
+    padding-bottom: 64px;
+
+    &__top {
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    &__rating {
+      min-width: 240px;
+      padding: 20px;
+      gap: 14px;
+    }
+
+    &__score {
+      font-size: 40px;
+    }
+
+    &__grid {
+      gap: 14px;
+    }
+  }
+
+  @include mq-mobile {
+    padding-bottom: 48px;
+
+    &__top {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__rating {
+      width: 100%;
+      min-width: 0;
+    }
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.review-card {
+  @extend %card;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  min-height: 240px;
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
+  &__name {
+    margin: 0 0 4px;
+    font-size: $font-size-base;
+    font-weight: 700;
+    color: $color-text;
+  }
+
+  &__service {
+    margin: 0;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+  }
+
+  &__avatar {
+    @include flex-center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba($color-accent, 0.18);
+    color: $color-accent;
+    font-size: $font-size-xs;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  &__text {
+    flex: 1;
+    margin: 0 0 20px;
+    font-size: $font-size-sm;
+    line-height: 1.55;
+    color: $color-text;
+  }
+
+  &__tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+
+    &::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: $color-check;
+    }
+  }
+
+  @include mq-mobile {
+    min-height: 0;
+    padding: 20px;
+  }
+}

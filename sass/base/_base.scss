@@ -1,0 +1,62 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/placeholders" as *;
+
+.visually-hidden {
+  @extend %visually-hidden;
+}
+
+.container {
+  @include container;
+
+  @include mq-tablet {
+    padding-inline: 24px;
+  }
+
+  @include mq-mobile {
+    padding-inline: 16px;
+  }
+}
+
+.section-head {
+  margin-bottom: 40px;
+
+  &__line {
+    @include accent-line;
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    font-size: $font-size-2xl;
+    font-weight: 700;
+    color: $color-text;
+  }
+
+  &__text {
+    margin: 0;
+    max-width: 580px;
+    font-size: $font-size-base;
+    line-height: 1.55;
+    color: $color-text-muted;
+  }
+
+  @include mq-tablet {
+    margin-bottom: 32px;
+
+    &__title {
+      font-size: 32px;
+    }
+  }
+
+  @include mq-mobile {
+    margin-bottom: 24px;
+
+    &__title {
+      font-size: 26px;
+    }
+
+    &__text {
+      font-size: $font-size-sm;
+    }
+  }
+}

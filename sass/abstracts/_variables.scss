@@ -1,0 +1,44 @@
+// Colors
+$color-cream: #f4eee6;
+$color-cream-soft: #f7f4ef;
+$color-white: #ffffff;
+$color-dark: #1a1a1a;
+$color-text: #1f1f1f;
+$color-text-muted: #6b6b6b;
+$color-hero: #2c3e46;
+$color-accent: #c57a45;
+$color-accent-hover: #b36b3a;
+$color-border: #e2ddd5;
+$color-border-dark: #1f1f1f;
+$color-rating: #2d4554;
+$color-form-bg: #364f59;
+$color-footer: #1c2124;
+$color-star: #e8a84a;
+$color-check: #5a7a82;
+$color-hero-line: rgba(120, 160, 170, 0.35);
+$color-input-border: rgba(255, 255, 255, 0.35);
+$color-form-muted: #a8c0c8;
+
+// Typography
+$font-primary: "Manrope", "Segoe UI", sans-serif;
+$font-size-xs: 13px;
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-md: 18px;
+$font-size-lg: 22px;
+$font-size-xl: 32px;
+$font-size-2xl: 40px;
+$font-size-hero: 48px;
+
+// Layout
+$container-width: 1120px;
+$container-padding: 40px;
+$header-height: 80px;
+$radius-sm: 4px;
+$radius-md: 8px;
+$transition: 0.2s ease;
+
+// Breakpoints: адаптив с 768px; бургер/мобилка — 320px
+$bp-desktop: 1024px;
+$bp-tablet: 768px;
+$bp-mobile: 320px;

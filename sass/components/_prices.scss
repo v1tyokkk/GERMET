@@ -1,0 +1,130 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+.prices {
+  background-color: $color-white;
+  @include section-padding;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  @include mq-tablet {
+    padding-block: 64px;
+  }
+
+  @include mq-mobile {
+    padding-block: 48px;
+
+    &__grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+}
+
+.price-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  background-color: $color-white;
+
+  &--popular {
+    border-color: $color-accent;
+    border-width: 2px;
+    margin-top: 4px;
+    padding-top: 36px;
+  }
+
+  &__badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 12px;
+    background-color: $color-accent;
+    color: $color-white;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border-radius: $radius-sm;
+    white-space: nowrap;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-size: $font-size-md;
+    font-weight: 700;
+    color: $color-text;
+  }
+
+  &__price {
+    margin: 0 0 24px;
+    font-size: 28px;
+    font-weight: 700;
+    color: $color-text;
+
+    span {
+      font-size: $font-size-sm;
+      font-weight: 500;
+      color: $color-text-muted;
+    }
+  }
+
+  &__list {
+    flex: 1;
+    margin: 0 0 28px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding-block: 12px;
+    border-top: 1px solid $color-border;
+    font-size: $font-size-sm;
+    line-height: 1.4;
+    color: $color-text;
+
+    &:last-child {
+      border-bottom: 1px solid $color-border;
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      color: $color-check;
+    }
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  @include mq-tablet {
+    &__badge {
+      left: 20px;
+      transform: none;
+    }
+  }
+
+  @include mq-mobile {
+    padding: 28px 20px;
+
+    &--popular {
+      padding-top: 32px;
+    }
+
+    &__price {
+      font-size: 24px;
+    }
+  }
+}
